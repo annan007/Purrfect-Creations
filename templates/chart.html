@@ -1,0 +1,27 @@
+{% block content %}
+    <div class="container">
+        <div class="row p-2">
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./static/barchart.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Product Popularity Chart</h5>
+                      <p class="card-text">This Bar graph tells us which product is currently in demand and which isn't.</p>
+                      <p class="card-text"><small class="text-muted">{% now "jS F Y H:i" %}</small></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card mb-3">
+                    <img src="./static/piechart.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Order Status Summary</h5>
+                      <p class="card-text">The Pie chart shows distribution of Order Status.</p>
+                      <p class="card-text"><small class="text-muted">{% now "jS F Y H:i" %}</small></p>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+{% endblock content%}
+

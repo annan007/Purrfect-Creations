@@ -1,0 +1,79 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row p-2 my-4">
+        <div class="col-12 col-md-6 col-lg-3 mb-4 mb-lg-0">
+            <div class="card">
+                <h5 class="card-header text-bg-secondary">Total Orders</h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{ response.total_order }}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+            <div class="card">
+                <h5 class="card-header text-bg-secondary">Total Revenue</h5>
+                <div class="card-body">
+                  <h5 class="card-title">£ {{response.total_revenue}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+            <div class="card">
+                <h5 class="card-header text-bg-secondary">Orders In-Progress</h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{response.order_in_progress}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4 mb-lg-0 col-lg-3">
+            <div class="card">
+                <h5 class="card-header text-bg-secondary">Total Orders This Month</h5>
+                <div class="card-body">
+                  <h5 class="card-title">{{response.total_order_this_month}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row p-2">
+        <div class="col-12 col-xl-8 mb-4 mb-lg-0">
+            <div class="card">
+                <h5 class="card-header text-bg-secondary">Most Recent Orders</h5>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                            <tr>
+                                <th scope="col">Order Id</th>
+                                <th scope="col">Order Placed</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Customer</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Order Status</th>
+                            </tr>
+                            </thead>
+
+                            <tbody>
+                                {% for item in response.recent_orders%}
+                                    <tr>
+                                        <th scope="row">{{item.order_id}}</th>
+                                        <td>{{item.order_placed}}</td>
+                                        <td>{{item.product_name}}</td>
+                                        <td>{{item.first_name}} {{item.last_name}}</td>
+                                        <td>£{{item.price}}</td>
+                                        <td>{{item.order_status}}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content%}

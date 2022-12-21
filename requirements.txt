@@ -1,0 +1,7 @@
+Django==4.1.4
+kaleido
+kiwisolver==1.4.4
+pandas==1.5.2
+plotly==5.11.0
+pyairtable==1.4.0
+python-decouple==3.6
