@@ -17,3 +17,24 @@ Visit http://127.0.0.1:8000/ in your browser. The app should be up & running.
     $ sudo docker-compose up -d
 ```
 
+## Implementation Specifics 
+
+1. Django-based application.
+2. Used `pyairtable` (a Python Client for the Airtable Api) to Retrieve data from Airtable table.
+   For more info : [Link](https://pyairtable.readthedocs.io/en/latest/getting-started.html)
+3. Key Figures implemented on the dashboard:
+   ```
+    - Total Orders
+
+    - Total Orders this month
+
+    - Number of orders in progress
+
+    - Revenue
+
+    - A list of the most recent few orders
+    
+    - Product popularity chart - BarGraph
+
+    - Order Status Summary - PieChart
+   ```
